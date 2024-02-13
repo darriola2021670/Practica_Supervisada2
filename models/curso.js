@@ -20,4 +20,4 @@ const CursoSchema = Schema({
     }
 });
 
-module.exports = model('Curso', CursoSchema)
+module.exports = model('Curso', CursoSchema);
