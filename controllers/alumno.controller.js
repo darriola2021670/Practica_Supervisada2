@@ -17,4 +17,5 @@ const AlumnosPost = async (req, res) =>{
 
 module.exports = {
     AlumnosPost
+    
 }
