@@ -1,5 +1,5 @@
 const Role = require('../models/role');
-const Alumno = require('../models/alumnos');
+const Alumno = require('../models/alumno');
 const Profesor = require('../models/profesor');
 
 const esRoleValido = async (role = '') =>{

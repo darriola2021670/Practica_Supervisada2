@@ -1,4 +1,4 @@
-const bcryptsjs = require('bcryptsjs');
+const bcryptjs = require('bcryptjs');
 const Alumno = require('../models/alumno');
 const {response, request} = require('express');
 
@@ -33,8 +33,8 @@ const putAlumnos = async (req, res = response) =>{
     const {_id, password, correo, ...resto} = req.body;
 
     if(password){
-        const salt = bcryptsjs.genSaltSync();
-        resto.password = bcryptsjs.hashSync(password, salt);
+        const salt = bcryptjs.genSaltSync();
+        resto.password = bcryptjs.hashSync(password, salt);
     }
     
     const alumno = await Alumno.findByIdAndUpdate(id, resto);
@@ -57,13 +57,13 @@ const alumnosDelete = async(req, res) =>{
 }
 
 const alumnosPost = async (req, res) =>{
-    const {nombre, correo, password, carne, cursos, role} = req.body;
-    const alumno = new Alumno({nombre, correo, password, carne, cursos, role});
+    const {nombre, correo, password, carne, role} = req.body;
+    const alumno = new Alumno({nombre, correo, password, carne, role});
 
-    const salt = bcryptsjs.genSaltSync();
-    alumno.password = bcryptsjs.hashSync(password, salt);
+    const salt = bcryptjs.genSaltSync();
+    alumno.password = bcryptjs.hashSync(password, salt);
 
-    await usuario.save();
+    await alumno.save();
     res.status(202).json({
         alumno
     });

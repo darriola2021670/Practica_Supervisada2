@@ -19,10 +19,6 @@ const AlumnoSchema = Schema({
         required: [true, 'El carne es requerido'],
         uniqued: true
     },
-    cursos:{
-        type: String,
-        required: [true, 'Los cursos son requeridos'],
-    },
     role:{
         type: String,
         required: true,

@@ -14,10 +14,6 @@ const ProfesorSchema = Schema({
         type: String,
         required: [true, "La contraseña es requerida"]
     },
-    cursos:{
-        type: String,
-        required: [true, 'El curso es requerido']
-    },
     role:{
         type: String,
         required: true,
