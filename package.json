@@ -2,10 +2,10 @@
   "name": "laboratorio_api2",
   "version": "1.0.0",
   "description": "api de control supervisado escolar",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "author": "Diego Arriola",
   "license": "ISC",
