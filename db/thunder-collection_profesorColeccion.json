@@ -1,0 +1,84 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "profesorColeccion",
+    "dateExported": "2024-02-14T23:27:29.025Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4ed7b0fd-5eee-4139-8423-41da8c92257e",
+            "colId": "2b91f96c-7255-4f29-b91d-992cd3caa1e4",
+            "containerId": "",
+            "name": "Agregar Profesor",
+            "url": "http://localhost:3000/api/profesores",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-14T19:46:02.525Z",
+            "modified": "2024-02-14T19:47:19.218Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Braulio\",\n  \"correo\":\"braulio1@gmail.com\",\n  \"password\":\"2938423\",\n  \"role\":\"TEACHER_ROLE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4164d969-ad3a-4670-a182-bbf5e60f139f",
+            "colId": "2b91f96c-7255-4f29-b91d-992cd3caa1e4",
+            "containerId": "",
+            "name": "get Profesores",
+            "url": "http://localhost:3000/api/profesores",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-14T19:59:50.744Z",
+            "modified": "2024-02-14T20:00:29.056Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c854802c-28cc-4ff2-adbe-8aa656fcc46a",
+            "colId": "2b91f96c-7255-4f29-b91d-992cd3caa1e4",
+            "containerId": "",
+            "name": "get ProfesorById",
+            "url": "http://localhost:3000/api/profesores/65cd18fb94620f67dd2bbd96",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-14T20:00:58.922Z",
+            "modified": "2024-02-14T20:01:12.883Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "11514f7d-1f62-4950-b4ec-7c5a599352f1",
+            "colId": "2b91f96c-7255-4f29-b91d-992cd3caa1e4",
+            "containerId": "",
+            "name": "put Profesor",
+            "url": "http://localhost:3000/api/profesores/65cd18fb94620f67dd2bbd96",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-02-14T20:03:44.937Z",
+            "modified": "2024-02-14T20:03:59.071Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "aadb3516-e512-4dea-9f75-7b5c3d07e596",
+            "colId": "2b91f96c-7255-4f29-b91d-992cd3caa1e4",
+            "containerId": "",
+            "name": "delete profesor",
+            "url": "http://localhost:3000/api/profesores/65cd18fb94620f67dd2bbd96",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-02-14T20:04:11.328Z",
+            "modified": "2024-02-14T20:04:16.712Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
