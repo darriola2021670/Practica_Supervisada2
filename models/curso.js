@@ -9,11 +9,6 @@ const CursoSchema = Schema({
         type:String,
         required: [true, 'Se necesita una descripcion']
     },
-    role:{
-        type: String,
-        required: true,
-        enum: ["STUDENT_ROLE","TEACHER_ROLE"]
-    },
     estado:{
         type: Boolean,
         default: true
