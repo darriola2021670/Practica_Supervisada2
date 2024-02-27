@@ -13,6 +13,10 @@ const CursoSchema = Schema({
         type: Boolean,
         default: true,
     },
+    alumnos: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Alumno',
+    }],
 });
 
 module.exports = model('Curso', CursoSchema);

@@ -69,10 +69,51 @@ const alumnosPost = async (req, res) =>{
     });
 }
 
+const asignarCurso = async (req, res = response) => {
+    const { idAlumno, idCurso } = req.body;
+
+    try {
+        const alumno = await Alumno.findById(idAlumno);
+        if (!alumno) {
+            return res.status(404).json({
+                msg: 'Alumno no encontrado',
+            });
+        }
+
+        const curso = await Curso.findById(idCurso);
+        if (!curso) {
+            return res.status(404).json({
+                msg: 'Curso no encontrado',
+            });
+        }
+
+        if (alumno.cursos.includes(idCurso)) {
+            return res.status(400).json({
+                msg: 'El alumno ya está inscrito en este curso',
+            });
+        }
+
+        alumno.cursos.push(idCurso);
+        await alumno.save();
+
+        res.status(200).json({
+            msg: 'Curso asignado al alumno exitosamente',
+            alumno,
+            curso,
+        });
+    } catch (error) {
+        console.error('Error al asignar curso al alumno:', error);
+        res.status(500).json({
+            msg: 'Error interno del servidor',
+        });
+    }
+};
+
 module.exports = {
     alumnosPost,
     alumnosGet,
     getAlumnoBYId,
     putAlumnos,
-    alumnosDelete
+    alumnosDelete,
+    asignarCurso
 }

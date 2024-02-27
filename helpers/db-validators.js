@@ -16,6 +16,13 @@ const existenteEmail = async(correo = '') =>{
     }
 }
 
+const alumnoExistente = async(correo = '') =>{
+    const existeEmail = await Alumno.findOne({correo});
+    if(existeEmail) {
+        throw new Error(`El correo ${ correo } ya esta registrado`);
+    }
+}
+
 const existenteId = async(id = '') =>{
     const existenteId = await Alumno.findOne({id});
     if(existenteId){
@@ -27,4 +34,5 @@ module.exports = {
     existenteId,
     esRoleValido,
     existenteEmail,
+    alumnoExistente
 }
