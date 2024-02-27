@@ -16,6 +16,20 @@ const existenteEmail = async(correo = '') =>{
     }
 }
 
+const existenteAlumno = async(id = '') =>{
+    const existenteAlumno = await Alumno.findOne({id});
+    if (!existenteAlumno){
+        throw new Error(`El token ${ id } no existe`)
+    }    
+}
+
+const existenteProfesor = async(id = '') =>{
+    const existenteProfesor = await Profesor.findOne({id});
+    if (!existenteProfesor){
+        throw new Error(`El token ${ id } no existe`)
+    }    
+}
+
 const existenteId = async(id = '') =>{
     const existenteId = await Alumno.findOne({id});
     if(existenteId){
@@ -26,5 +40,7 @@ const existenteId = async(id = '') =>{
 module.exports = {
     existenteId,
     esRoleValido,
-    existenteEmail
+    existenteEmail,
+    existenteAlumno,
+    existenteProfesor
 }

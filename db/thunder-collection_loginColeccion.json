@@ -1,25 +1,44 @@
 {
     "client": "Thunder Client",
     "collectionName": "loginColeccion",
-    "dateExported": "2024-02-14T23:27:34.648Z",
+    "dateExported": "2024-02-27T20:17:37.311Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "8da6180e-e687-4a34-92f9-3d136f262165",
-            "colId": "6a8685f6-b6e0-460e-8a23-8147f0b71a60",
+            "_id": "68cccffa-2e12-4aa5-99e1-b22f320b4fb0",
+            "colId": "dbad839d-ecdc-427d-b19c-06bc97e6d7ac",
             "containerId": "",
             "name": "post login",
             "url": "http://localhost:3000/api/auth/login",
             "method": "POST",
             "sortNum": 30000,
-            "created": "2024-02-14T22:24:46.279Z",
-            "modified": "2024-02-14T23:21:49.464Z",
+            "created": "2024-02-27T19:17:42.139Z",
+            "modified": "2024-02-27T20:14:27.960Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
                 "raw": "{\n  \"correo\":\"9598@gmail.com\",\n  \"password\":\"123456\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "161c49ee-b19d-46f1-a7f0-9519b9348b67",
+            "colId": "dbad839d-ecdc-427d-b19c-06bc97e6d7ac",
+            "containerId": "",
+            "name": "post profesor",
+            "url": "http://localhost:3000/api/authProf/loginProf",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-02-27T20:07:14.155Z",
+            "modified": "2024-02-27T20:11:38.196Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\":\"braulio2@gmail.com\",\n  \"password\":\"2938423\"\n}",
                 "form": []
             },
             "tests": []
