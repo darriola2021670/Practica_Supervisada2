@@ -13,14 +13,6 @@ const CursoSchema = Schema({
         type: Boolean,
         default: true,
     },
-    profesor: {
-        type: String,
-        ref: 'Profesor', 
-    },
-    alumnos: [{
-        type: String,
-        ref: 'Alumno', 
-    }],
 });
 
 module.exports = model('Curso', CursoSchema);

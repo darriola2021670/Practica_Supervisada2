@@ -1,7 +1,12 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 const { validarCampos } = require('../middlewares');
-const { cursoPost, putCursos, getCursoById } = require('../controllers/curso.controller');
+const {
+    putCursos,
+    getCursoById,
+    cursoPost
+} = require('../controllers/curso.controller')
+const { existenteId} = require('../helpers/db-validators');
 
 const router = Router();
 
@@ -10,14 +15,10 @@ router.get('/:id', getCursoById);
 router.put(
     '/:id',
     [
-        check('nombre', 'El nombre no puede estar vacío').not().isEmpty(),
-        check('descripcion', 'La descripción no puede estar vacía').not().isEmpty(),
-        check('profesorId', 'ID del profesor no válido').isMongoId(),
-        check('alumnosIds.*', 'ID de alumno no válido').isMongoId(),
-        validarCampos,
-    ],
-    putCursos
-);
+        check('id', 'No es un id valido').isMongoId(),
+        check('id').custom(existenteId),
+        validarCampos
+    ],putCursos);
 
 router.post(
     '/',
@@ -25,8 +26,6 @@ router.post(
         check('nombre', 'El nombre no puede estar vacío').not().isEmpty(),
         check('descripcion', 'La descripción no puede estar vacía').not().isEmpty(),
         validarCampos,
-    ],
-    cursoPost
-);
+    ],cursoPost);
 
 module.exports = router;
