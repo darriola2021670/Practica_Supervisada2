@@ -22,7 +22,7 @@ const AlumnoSchema = Schema({
     role:{
         type: String,
         required: true,
-        enum: ["STUDENT_ROLE","TEACHER_ROLE"]
+        enum: ["STUDENT_ROLE"]
     },
     estado:{
         type: Boolean,
